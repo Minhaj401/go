@@ -16,9 +16,9 @@ func (o order) neworder (id string ,amount float32,status string,cretatedat time
 		id:id,
 		amount:amount,
 		status: status,
-		cretatedat:time.now()
+		cretatedat:time.Now(),
 	}
-	return *myorder
+	return &myorder
 }
 func (o order) getid() string {
 	return o.id
@@ -33,10 +33,10 @@ func main (){
 
 
 	}
-	my:=neworder("5",50.2,"completed")
-	fmt.Printf("Order: ", order)
+	my:=order.neworder("5",50.2,"completed",time.Now())
+	fmt.Printf("Order: %+v\n", order)
 	order.changestatus("delivered")
 	fmt.Println("Order: ", order)
-	fmt.Println(my.getid())
+	fmt.Println(my)
 
 }
