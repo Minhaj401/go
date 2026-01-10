@@ -1,7 +1,7 @@
 package main
 import "fmt"
 import "time"
-func task(id int){
+func task(id int,){
 	fmt.Println("doing task",id)
 }
 func main(){
